@@ -34,7 +34,6 @@ public class ListingsModel {
 
     private boolean available;
 
-    // Custom methods can be added here if needed
     public void markAsUnavailable() {
         this.available = false;
     }

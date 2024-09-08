@@ -19,26 +19,22 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    // Create a new review
     @PostMapping
     public ReviewModel createReview(@RequestBody ReviewModel review) {
         return reviewService.createReview(review);
     }
 
-    // Get a review by ID
     @GetMapping("/{id}")
     public ReviewModel getReviewById(@PathVariable Long id) {
         Optional<ReviewModel> review = reviewService.getReviewById(id);
         return review.orElse(null);
     }
 
-    // Get all reviews
     @GetMapping
     public List<ReviewModel> getAllReviews() {
         return reviewService.getAllReviews();
     }
 
-    // Update a review
     @PutMapping("/{id}")
     public ReviewModel updateReview(@PathVariable Long id, @RequestBody ReviewModel updatedReview) {
         Optional<ReviewModel> existingReview = reviewService.getReviewById(id);
@@ -48,8 +44,6 @@ public class ReviewController {
             return null;
         }
     }
-
-    // Delete a review by ID
     @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable Long id) {
         reviewService.deleteReview(id);
