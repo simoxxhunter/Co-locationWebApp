@@ -51,11 +51,26 @@ public class ListingServiceImp implements ListingService {
     }
 
     public ListingsModel markAsUnavailable(Long id) {
-        return listingRepository.findById(id)
-                .map(existingListing -> {
-                    existingListing.setAvailable(false);
-                    return listingRepository.save(existingListing);
-                })
-                .orElseThrow(() -> new RuntimeException("Listing not found"));
+        Optional<ListingsModel> optionalListing = listingRepository.findById(id);
+        if (optionalListing.isPresent()) {
+            ListingsModel existingListing = optionalListing.get();
+            existingListing.setAvailable(false);
+            return listingRepository.save(existingListing);
+        } else {
+            throw new RuntimeException("Listing not found");
+        }
     }
+
+    public ListingsModel markAsAvailable(Long id) {
+        Optional<ListingsModel> optionalListing = listingRepository.findById(id);
+        if (optionalListing.isPresent()) {
+            ListingsModel existingListing = optionalListing.get();
+            existingListing.setAvailable(true);
+            return listingRepository.save(existingListing);
+        } else {
+            throw new RuntimeException("Listing not found");
+        }
+    }
+
+
 }
