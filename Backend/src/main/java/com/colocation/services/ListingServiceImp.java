@@ -7,6 +7,7 @@ import com.colocation.models.ListingsModel;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class ListingServiceImp implements ListingService {
 
