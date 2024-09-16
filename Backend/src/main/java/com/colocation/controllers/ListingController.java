@@ -51,4 +51,9 @@ public class ListingController {
     public ListingsModel markAsUnavailable(@PathVariable Long id) {
         return listingService.markAsUnavailable(id);
     }
+
+    @PatchMapping("/{id}/available")
+    public ListingsModel markAsAvailable(@PathVariable Long id) {
+        return listingService.markAsAvailable(id);
+    }
 }
