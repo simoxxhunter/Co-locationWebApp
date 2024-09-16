@@ -14,4 +14,5 @@ public interface ListingService {
     ListingsModel updateListing(Long id, ListingsModel updatedListing);
     void deleteListing(Long id);
     ListingsModel markAsUnavailable(Long id);
+    ListingsModel markAsAvailable(Long id);
 }
