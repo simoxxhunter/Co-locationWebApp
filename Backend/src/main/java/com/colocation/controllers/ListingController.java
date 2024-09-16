@@ -3,6 +3,7 @@ package com.colocation.controllers;
 import com.colocation.models.ListingsModel;
 import com.colocation.services.ListingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,14 +21,14 @@ public class ListingController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ListingsModel createListing(@RequestBody ListingsModel listing) {
         return listingService.createListing(listing);
     }
 
     @GetMapping("/{id}")
-    public ListingsModel getListingById(@PathVariable Long id) {
-        Optional<ListingsModel> listing = listingService.getListingById(id);
-        return listing.orElse(null);
+    public Optional<ListingsModel> getListingById(@PathVariable Long id) {
+        return listingService.getListingById(id);
     }
 
     @GetMapping
@@ -37,26 +38,17 @@ public class ListingController {
 
     @PutMapping("/{id}")
     public ListingsModel updateListing(@PathVariable Long id, @RequestBody ListingsModel updatedListing) {
-        Optional<ListingsModel> existingListing = listingService.getListingById(id);
-        if (existingListing.isPresent()) {
-            return listingService.updateListing(id, updatedListing);
-        } else {
-            return null;
-        }
+        return listingService.updateListing(id, updatedListing);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteListing(@PathVariable Long id) {
         listingService.deleteListing(id);
     }
 
     @PatchMapping("/{id}/unavailable")
     public ListingsModel markAsUnavailable(@PathVariable Long id) {
-        Optional<ListingsModel> existingListing = listingService.getListingById(id);
-        if (existingListing.isPresent()) {
-            return listingService.markAsUnavailable(id);
-        } else {
-            return null;
-        }
+        return listingService.markAsUnavailable(id);
     }
 }
