@@ -14,14 +14,19 @@ public class UserServiceImp implements UserService {
     @Autowired
     private UserRepo userRepository;
 
+    @Override
     public ProfileModel getProfile(Long userId) {
-        UserModel user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-
-        if (user.getProfiles() != null && !user.getProfiles().isEmpty()) {
-            return user.getProfiles().iterator().next();
-        } else {
-            throw new RuntimeException("Profile not found");
-        }
+        return null;
     }
+
+//    public ProfileModel getProfile(Long userId) {
+//        UserModel user = userRepository.findById(userId)
+//                .orElseThrow(() -> new RuntimeException("User not found"));
+//
+//        if (user.getProfiles() != null && !user.getProfiles().isEmpty()) {
+//            return user.getProfiles().iterator().next();
+//        } else {
+//            throw new RuntimeException("Profile not found");
+//        }
+//    }
 }
