@@ -46,20 +46,33 @@ public class AuthenticationService {
 
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
+        System.out.println("AuthenticationRequest: " + request);
+
+        // Authentication attempt
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getPassword()
+                    )
+            );
+            System.out.println("Authentication successful for: " + request.getEmail());
+        } catch (Exception e) {
+            System.out.println("Authentication failed for: " + request.getEmail() + ", error: " + e.getMessage());
+            throw new RuntimeException("Authentication failed");
+        }
+
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         var jwtToken = jwtService.generateToken(user);
+        System.out.println("JWT Token for " + request.getEmail() + ": " + jwtToken);
+
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .role(user.getRole().name())
                 .build();
     }
+
 
 }

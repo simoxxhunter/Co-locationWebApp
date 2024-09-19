@@ -29,9 +29,16 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return email -> userDao.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return email -> {
+            System.out.println("Trying to find user by email: " + email);
+            return userDao.findByEmail(email)
+                    .orElseThrow(() -> {
+                        System.out.println("User not found for email: " + email);
+                        return new UsernameNotFoundException("User not found");
+                    });
+        };
     }
+
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
