@@ -20,7 +20,7 @@ public class ListingController {
         this.listingService = listingService;
     }
 
-    @PostMapping
+    @PostMapping("/createListing")
     @ResponseStatus(HttpStatus.CREATED)
     public ListingsModel createListing(@RequestBody ListingsModel listing) {
         return listingService.createListing(listing);
