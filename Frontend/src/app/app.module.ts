@@ -29,12 +29,20 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
-import { IndexComponent } from './index/index.component';
+import { IndexComponent } from './Components/index/index.component';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { ListingsComponent } from './Components/listings/listings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    LoginComponent,
+    SignupComponent,
+    ProfileComponent,
+    ListingsComponent
   ],
   imports: [
     MatTabsModule,
