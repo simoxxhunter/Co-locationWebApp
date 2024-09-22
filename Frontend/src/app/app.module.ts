@@ -34,6 +34,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ListingsComponent } from './Components/listings/listings.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ListingsComponent } from './Components/listings/listings.component';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    ListingsComponent
+    ListingsComponent,
+    NavbarComponent
   ],
   imports: [
     MatTabsModule,
