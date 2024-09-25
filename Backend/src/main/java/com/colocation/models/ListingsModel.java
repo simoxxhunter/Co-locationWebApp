@@ -34,7 +34,7 @@ public class ListingsModel {
 
     private boolean available;
 
-    public void markAsUnavailable() {
-        this.available = false;
+    public void markAsUnavailable(Long listingId) {
+        this.available = true;
     }
 }

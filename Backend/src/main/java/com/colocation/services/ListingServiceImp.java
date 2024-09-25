@@ -50,15 +50,16 @@ public class ListingServiceImp implements ListingService {
         listingRepository.deleteById(id);
     }
 
-    public ListingsModel markAsUnavailable(Long id) {
-        Optional<ListingsModel> optionalListing = listingRepository.findById(id);
+    public ListingsModel markAsUnavailable(Long listingId) {
+        Optional<ListingsModel> optionalListing = listingRepository.findById(listingId);
         if (optionalListing.isPresent()) {
             ListingsModel existingListing = optionalListing.get();
             existingListing.setAvailable(false);
-            return listingRepository.save(existingListing);
+            listingRepository.save(existingListing);
         } else {
             throw new RuntimeException("Listing not found");
         }
+        return null;
     }
 
     public ListingsModel markAsAvailable(Long id) {
