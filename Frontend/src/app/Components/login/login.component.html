@@ -1,28 +1,23 @@
-<div class="container">
-  <h2>Login</h2>
-  <form (ngSubmit)="onLogin()">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        [(ngModel)]="email"
-        name="email"
-        class="form-control"
-        required
-      />
+<app-navbar></app-navbar>
+<div class="spark-section-2 spark-secondary-background wf-section">
+  <div class="spark-container-2 w-container">
+    <div class="spark-centered-form-2 spark-simple-shadow-small w-form">
+      <div class="spark-form-heading-2">Connecter</div>
+      <form id="wf-form-Login-form" name="wf-form-Login-form" data-name="Login form" method="get"><label for="Login-form-Email-Address">Adress EEmail</label><input type="email" class="spark-input-2 w-input" maxlength="256" name="Login-form-Email-Address" data-name="Login form Email Address" placeholder="Entrer votre adress email" id="Login-form-Email-Address" required=""><label for="Password-3">Mote de passe</label><input type="password" class="spark-input-2 w-input" maxlength="256" name="Password-2" data-name="Password 2" placeholder="" id="field" required="">
+          <a href="user-profile.html">
+          <input type="submit" value="Connexion" data-wait="Please wait..." class="spark-button-2 spark-full-width w-button"></a>
+        <div class="spark-form-sub-text-2">Vous n'avez pas de compte ?
+          <a href="untitled.html"> S&#x27;inscrire</a>
+        </div>
+      </form>
+      <div class="spark-form-success-2 w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        [(ngModel)]="password"
-        name="password"
-        class="form-control"
-        required
-      />
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+    <a href="lost-password.html" class="spark-centered-text-link">Forgot your password?</a>
+  </div>
 </div>
+
