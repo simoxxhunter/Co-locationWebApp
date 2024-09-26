@@ -41,10 +41,10 @@ export class SignupComponent implements OnInit{
       const formData = {
         email: this.signupForm.value.email,
         password: this.signupForm.value.password,
-        firstName: this.signupForm.value.firstName,
-        lastName: this.signupForm.value.lastName,
+        firstname: this.signupForm.value.firstName,
+        lastname: this.signupForm.value.lastName,
         username: this.signupForm.value.username,
-        phoneNumber: this.signupForm.value.phoneNumber,
+        phonenumber: this.signupForm.value.phoneNumber,
         role : 'USER'
 
       };
@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit{
       this.authService.register(formData).subscribe(
         response => {
           this.authService.saveToken(response.token);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/dashboard']);
         },
         error => {
           console.error('Registration failed', error);
@@ -61,6 +61,7 @@ export class SignupComponent implements OnInit{
     }
   }
   
-
+  
+  
 
 }
