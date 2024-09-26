@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private apiUrl = 'http://localhost:8089/api/v1/auth';
 
+  role = 'USER';
   
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -16,9 +17,10 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/authenticate`, { email, password });
   }
 
-  register(email: string, password: string, role: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, { email, password, role });
+  register(userData: { email: string, password: string, firstName: string, lastName: string, username: string, phoneNumber: string , role: string }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, userData);
   }
+  
 
   saveToken(token: string): void {
     localStorage.setItem('authToken', token);
