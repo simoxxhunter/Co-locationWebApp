@@ -14,8 +14,10 @@ import com.colocation.repositories.*;
 import com.colocation.models.*;
 import com.colocation.config.*;
 import com.colocation.auth.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
+@CrossOrigin(origins = "http://localhost:4200")
 
 @Service
 @RequiredArgsConstructor
