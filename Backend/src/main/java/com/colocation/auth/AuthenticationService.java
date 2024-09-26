@@ -17,8 +17,6 @@ import com.colocation.auth.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
-
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -34,6 +32,10 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
+                .firstname(request.getFirstname())
+                .lastname(request.getLastname())
+                .phonenumber(request.getPhonenumber())
+                .username(request.getUsername())
                 .build();
 
         System.out.println("User before save: " + user);
