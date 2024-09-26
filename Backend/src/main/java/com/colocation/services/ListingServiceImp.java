@@ -55,11 +55,10 @@ public class ListingServiceImp implements ListingService {
         if (optionalListing.isPresent()) {
             ListingsModel existingListing = optionalListing.get();
             existingListing.setAvailable(false);
-            listingRepository.save(existingListing);
+            return listingRepository.save(existingListing);  // Return the updated listing
         } else {
             throw new RuntimeException("Listing not found");
         }
-        return null;
     }
 
     public ListingsModel markAsAvailable(Long id) {
