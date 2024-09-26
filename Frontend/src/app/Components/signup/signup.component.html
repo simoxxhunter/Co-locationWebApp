@@ -2,21 +2,56 @@
 
 <div  data-wf-page="646c0eb51af967cdce2a2d92" data-wf-site="64673c8aee79240403ee51a3" ></div>
 
-  <div class="spark-section spark-secondary-background wf-section">
-    <div class="spark-container w-container">
-      <div class="spark-centered-form spark-simple-shadow-small w-form">
-        <div class="spark-form-heading">S&#x27;inscrire</div>
-        <form id="wf-form-Sign-up-form" name="wf-form-Sign-up-form" data-name="Sign up form" redirect="login" data-redirect="login" method="get"><label for="Your-Name---Signup-Form">Nom</label><input type="text" class="spark-input w-input" maxlength="256" name="Your-Name---Signup-Form" data-name="Your Name - Signup Form" placeholder="" id="Your-Name---Signup-Form" required=""><label for="Email-Address-Sign-up-form-2">Adress mail</label><input type="email" class="spark-input w-input" maxlength="256" name="Email-Address-Sign-up-form" data-name="Email Address Sign up form" placeholder="Votre adress email" id="Email-Address-Sign-up-form-2" required=""><label for="Password-Sign-up-form">Mote de passe</label><input type="password" class="spark-input w-input" maxlength="256" name="Password-Sign-up-form" data-name="Password Sign up form" placeholder="" id="Password-Sign-up-form" required=""><input type="submit" value="S&#x27;inscrire" data-wait="Please wait..." class="spark-button spark-full-width w-button">
-          <div class="spark-form-sub-text">Vous avez déjà un compte? <a href="login.html"><span>Connexion</span></a>
+<div class="spark-section spark-secondary-background wf-section">
+  <div class="spark-container w-container">
+    <div class="spark-centered-form spark-simple-shadow-small w-form">
+      <div class="spark-form-heading">S'inscrire</div>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="FirstName-Sign-up-form">Prénom</label>
+            <input type="text" formControlName="firstName" class="spark-input w-input" placeholder="Votre prénom" required>
           </div>
-        </form>
-        <div class="spark-form-success w-form-done">
-          <div>Thank you! Your submission has been received!</div>
+          <div class="form-group">
+            <label for="LastName-Sign-up-form">Nom de famille</label>
+            <input type="text" formControlName="lastName" class="spark-input w-input" placeholder="Votre nom de famille" required>
+          </div>
         </div>
-        <div class="w-form-fail">
-          <div>Oops! Something went wrong while submitting the form.</div>
+      
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Username-Sign-up-form">Nom d'utilisateur</label>
+            <input type="text" formControlName="username" class="spark-input w-input" placeholder="Nom d'utilisateur" required>
+          </div>
+          <div class="form-group">
+            <label for="Email-Address-Sign-up-form-2">Adresse e-mail</label>
+            <input type="email" formControlName="email" class="spark-input w-input" placeholder="Votre adresse e-mail" required>
+          </div>
         </div>
+      
+        <div class="form-row">
+          <div class="form-group">
+            <label for="PhoneNumber-Sign-up-form">Numéro de téléphone</label>
+            <input type="tel" formControlName="phoneNumber" class="spark-input w-input" placeholder="Votre numéro de téléphone" required>
+          </div>
+          <div class="form-group">
+            <label for="Password-Sign-up-form">Mot de passe</label>
+            <input type="password" formControlName="password" class="spark-input w-input" placeholder="Mot de passe" required>
+          </div>
+        </div>
+      
+        <button type="submit" class="spark-button spark-full-width w-button">S'inscrire</button>
+      </form>
+      
+
+      <div class="spark-form-success w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
       </div>
     </div>
   </div>
- 
+</div>
+
+
