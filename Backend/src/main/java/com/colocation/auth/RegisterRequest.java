@@ -1,6 +1,7 @@
 package com.colocation.auth;
 
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +23,11 @@ import com.colocation.auth.*;
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 public class RegisterRequest {
+    private String username;
     private String email;
     private String password;
+    private String firstname;
+    private String lastname;
+    private String phonenumber;
     private Role role;
 }
