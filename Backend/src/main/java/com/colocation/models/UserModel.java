@@ -38,13 +38,13 @@ public class UserModel implements UserDetails {
     private String email;
 
     @Column
-    private String firstName;
+    private String firstname;
 
     @Column
-    private String lastName;
+    private String lastname;
 
     @Column
-    private String phoneNumber;
+    private String phonenumber;
 
     @Column(name = "role", nullable = false, length = 10)
     @Enumerated(EnumType.STRING)
