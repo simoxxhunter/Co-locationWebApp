@@ -55,7 +55,7 @@ public class ListingServiceImp implements ListingService {
         if (optionalListing.isPresent()) {
             ListingsModel existingListing = optionalListing.get();
             existingListing.setAvailable(false);
-            return listingRepository.save(existingListing);  // Return the updated listing
+            return listingRepository.save(existingListing);
         } else {
             throw new RuntimeException("Listing not found");
         }
