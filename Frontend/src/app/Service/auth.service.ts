@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8083/api/v1/auth';
+  private apiUrl = 'localhost:8089/api/v1/auth';
 
+  
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email: string, password: string): Observable<any> {
