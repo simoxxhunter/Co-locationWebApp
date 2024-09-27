@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -34,6 +35,6 @@ public class ContactModel {
     private String message;
 
     @Column(nullable = false)
-    private Date date;
+    private LocalDate date;
 
 }
