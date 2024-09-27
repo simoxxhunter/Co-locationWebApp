@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Service/auth.service';
 
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/Service/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   ngOnInit() {
     const script = document.createElement('script');
     script.src = 'assets/js/webflow.js';
