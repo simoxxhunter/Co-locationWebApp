@@ -23,12 +23,12 @@ export class ContactComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       company: ['', Validators.required],
       message: ['', Validators.required],
-      date: [{value: '', disabled: true}] // Disabled because it will be set automatically
+      date: [{value: '', disabled: true}]
     });
   }
 
   ngOnInit() {
-    const today = new Date().toISOString().split('T')[0]; // Formats date as YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
     this.contactForm.get('date')?.setValue(today);
 
     const script = document.createElement('script');
