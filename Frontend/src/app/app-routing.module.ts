@@ -6,13 +6,15 @@ import {ListingsComponent} from "./Components/listings/listings.component";
 import { SignupComponent } from './Components/signup/signup.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { ContactsuccessComponent } from './Components/contactsuccess/contactsuccess.component';
 const routes: Routes = [
   {path : "index", component : IndexhomeComponent},
   {path : "login", component : LoginComponent },
   {path : "createListing", component : ListingsComponent },
   {path : "register" , component : SignupComponent},
   {path : "user-profile" , component : ProfileComponent},
-  {path : "contact-us" , component : ContactComponent}
+  {path : "contact-us" , component : ContactComponent},
+  {path : "contact-success" , component : ContactsuccessComponent}
 
 ];
 

@@ -36,6 +36,7 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { AuthService } from './Service/Authentification/auth.service';
 import { AuthInterceptorInterceptor } from './interceptor/auth-interceptor.interceptor';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { ContactsuccessComponent } from './Components/contactsuccess/contactsuccess.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     ListingsComponent,
     NavbarComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    ContactsuccessComponent
   ],
   imports: [
     MatTabsModule,
