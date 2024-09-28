@@ -20,7 +20,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:4200")
+import static org.springframework.http.HttpMethod.POST;
+
+
 
 @Configuration
 @EnableWebSecurity
@@ -36,7 +38,8 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll() // Open to all
-                   //     .requestMatchers("/admin/**").hasRole("ADMIN") // Restricted to ADMIN role
+                        .requestMatchers(POST, "/api/contacts/**").hasAuthority("USER")
+                        //     .requestMatchers("/admin/**").hasRole("ADMIN") // Restricted to ADMIN role
                         .anyRequest().authenticated() // All other requests require authentication
                 )
                 .sessionManagement(session -> session
