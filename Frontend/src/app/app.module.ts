@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,6 +32,10 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { ListingsComponent } from './Components/listings/listings.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { ContactComponent } from './Components/contact/contact.component';
+import { AuthService } from './Service/Authentification/auth.service';
+import { AuthInterceptorInterceptor } from './interceptor/auth-interceptor.interceptor';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FooterComponent } from './Components/footer/footer.component';
     ProfileComponent,
     ListingsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     MatTabsModule,
@@ -75,7 +77,13 @@ import { FooterComponent } from './Components/footer/footer.component';
     MatSelectModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    [AuthService,
+      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorInterceptor, multi: true }
+    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
