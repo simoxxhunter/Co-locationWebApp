@@ -27,8 +27,6 @@ public class ContactModel {
 
     @Column(nullable = false)
     private String email;
-
-    @Column(nullable = false)
     private String company;
 
     @Column(nullable = false)
