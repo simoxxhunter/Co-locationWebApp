@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+
+
+@CrossOrigin(origins = "http://localhost:4200/")
 
 @RestController
 @RequestMapping("/api/contacts")
@@ -24,7 +26,7 @@ public class ContactController {
         this.contactService = contactService;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public ContactModel createContact(@RequestBody ContactModel contact) {
         return contactService.createContact(contact);
