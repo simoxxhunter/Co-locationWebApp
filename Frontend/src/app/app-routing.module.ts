@@ -7,6 +7,7 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { ContactsuccessComponent } from './Components/contactsuccess/contactsuccess.component';
+import { PublishlistingsComponent } from './Components/publishlistings/publishlistings.component';
 const routes: Routes = [
   {path : "index", component : IndexhomeComponent},
   {path : "login", component : LoginComponent },
@@ -14,7 +15,11 @@ const routes: Routes = [
   {path : "register" , component : SignupComponent},
   {path : "user-profile" , component : ProfileComponent},
   {path : "contact-us" , component : ContactComponent},
-  {path : "contact-success" , component : ContactsuccessComponent}
+  {path : "contact-success" , component : ContactsuccessComponent},
+  {path : "listings" , component : ListingsComponent},
+  {path : "publish" , component : PublishlistingsComponent},
+
+
 
 ];
 
