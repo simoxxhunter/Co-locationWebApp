@@ -1,56 +1,191 @@
 <app-navbar></app-navbar>
 
-<body class="bg-gray-100">
-<div class="container mx-auto p-6">
-  <h2 class="text-2xl font-bold mb-4">Create New Listing</h2>
-  <form class="space-y-4">
-    <div>
-      <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
-      <input type="text" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-    </div>
-
-    <div>
-      <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-      <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required></textarea>
-    </div>
-
-    <div>
-      <label for="rent" class="block mb-2 text-sm font-medium text-gray-900">Rent</label>
-      <input type="number" id="rent" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-    </div>
-
-    <div class="grid md:grid-cols-2 md:gap-6">
-      <div>
-        <label for="bedrooms" class="block mb-2 text-sm font-medium text-gray-900">Bedrooms</label>
-        <input type="number" id="bedrooms" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+<div class="text-block-5 text-gradient">annonces en vedette</div>
+<section class="section-4 background-primary-pale wf-section">
+  <div class="container-5 w-container">
+    <div data-delay="4000" data-animation="slide" class="w-slider" data-autoplay="true" data-easing="ease"
+      data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3"
+      data-duration="500" data-infinite="true">
+      <div class="w-slider-mask">
+        <div class="slide w-slide"></div>
+        <div class="slide-2 w-slide"></div>
       </div>
-      <div>
-        <label for="bathrooms" class="block mb-2 text-sm font-medium text-gray-900">Bathrooms</label>
-        <input type="number" id="bathrooms" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+      <div class="w-slider-arrow-left">
+        <div class="w-icon-slider-left"></div>
+      </div>
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right"></div>
+      </div>
+      <div class="slide2 w-slider-nav w-round w-num"></div>
+    </div>
+  </div>
+  <div class="container-6 w-container">
+    <div class="columns w-row">
+      <div class="w-col w-col-3">
+        <div data-hover="true" data-delay="5" class="w-dropdown">
+          <div class="dropdown-toggle w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div>Type de Longement</div>
+          </div>
+          <nav class="w-dropdown-list">
+            <a href="#" class="w-dropdown-link">Appartement</a>
+            <a href="#" class="w-dropdown-link">Chambres</a>
+            <a href="#" class="w-dropdown-link">Studio</a>
+            <a href="#" class="w-dropdown-link">Villa</a>
+            <a href="#" class="w-dropdown-link">Garconniére</a>
+          </nav>
+        </div>
+      </div>
+      <div class="w-col w-col-3">
+        <div data-hover="true" data-delay="5" class="w-dropdown">
+          <div class="dropdown-toggle w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div>Chercher par les villes</div>
+          </div>
+          <nav class="w-dropdown-list">
+            <a href="#" class="w-dropdown-link">Tanger</a>
+            <a href="#" class="w-dropdown-link">Rabat</a>
+            <a href="#" class="w-dropdown-link">Tetouan</a>
+            <a href="#" class="w-dropdown-link">Casablanca</a>
+            <a href="#" class="w-dropdown-link">Marrakech</a>
+            <a href="#" class="w-dropdown-link">Fes</a>
+            <a href="#" class="w-dropdown-link">Laayoune</a>
+          </nav>
+        </div>
+      </div>
+      <div class="column w-col w-col-3">
+        <div data-hover="true" data-delay="5" class="w-dropdown">
+          <div class="dropdown-toggle w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div>Range de prix</div>
+          </div>
+          <nav class="w-dropdown-list">
+            <a href="#" class="w-dropdown-link">0-1000</a>
+            <a href="#" class="w-dropdown-link">1000-2000</a>
+            <a href="#" class="w-dropdown-link">2000-3000</a>
+            <a href="#" class="w-dropdown-link">3000-4000</a>
+            <a href="#" class="w-dropdown-link">4000-5000</a>
+            <a href="#" class="w-dropdown-link"></a>
+          </nav>
+        </div>
+      </div>
+      <div class="column-2 w-col w-col-3">
+        <a href="#" class="spark-button-5 spark-icon-left-button w-inline-block w-clearfix">
+          <p class="spark-button-text-3"><strong>Rechercher</strong></p>
+          <div class="spark-small-icon-2 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
+                fill="currentColor" fill-opacity="0.94"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L12.7071 19.7071C12.3166 20.0976 11.6834 20.0976 11.2929 19.7071C10.9024 19.3166 10.9024 18.6834 11.2929 18.2929L17.5858 12L11.2929 5.70711C10.9024 5.31658 10.9024 4.68342 11.2929 4.29289Z"
+                fill="currentColor" fill-opacity="0.94"></path>
+            </svg></div>
+        </a>
       </div>
     </div>
+  </div>
+  <div class="w-container">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+      role="banner" class="w-nav">
+      <div class="w-container">
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div>
-      <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
-      <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+
+
+<div class="spark-section-3 background-primary-soft wf-section">
+  <div class="spark-container-3 w-container">
+    <div class="spark-centered-901">
+      <h2>Offres disponibles</h2>
+      <p class="spark-secondary-paragraph text-secondary text-secondary">
+        <span class="text-secondary">Découvrez votre espace de vie idéal</span>
+      </p>
     </div>
 
-    <div>
-      <label for="amenities" class="block mb-2 text-sm font-medium text-gray-900">Amenities</label>
-      <input type="text" id="amenities" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Separate amenities with commas">
-    </div>
 
-    <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900" for="photos">Upload photos</label>
-      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="photos" type="file" multiple>
-    </div>
 
-    <div class="flex items-center mb-4">
-      <input id="available" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" checked>
-      <label for="available" class="ml-2 text-sm font-medium text-gray-900">Available</label>
-    </div>
 
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Create Listing</button>
-  </form>
+    <div class="spark-four-column-team-grid">
+      <!-- Loop through each listing using *ngFor -->
+      <div *ngFor="let listing of listings" class="spark-wrapped-team-card spark-stacked">
+        <a href="#" class="w-inline-block">
+          <img src="{{listing.photos}}" loading="eager" width="80" alt="Listing Image" class="spark-square-image" />
+        </a>
+        <div class="spark-team-member-details">
+          <p class="spark-bold-heading">{{ listing.title }}</p>
+          <p class="spark-small-sub-paragraph">
+            {{ listing.description }} <br />
+            {{ listing.bedrooms }} beds<br />
+            {{ listing.rent }} dh/mois<br />
+          </p>
+        </div>
+        <div class="spark-social-row">
+          <a href="#" class="w-inline-block">
+            <div class="spark-icon spark-20px-icon w-embed">
+              <!-- SVG icon for phone -->
+              <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.667 2.5c-.369 0-.667.299-.667.667v10.667c0 .368.298.666.667.666h6.667c.369 0 .667-.298.667-.666V3.167c0-.368-.298-.667-.667-.667H4.667zm-2 .667c0-1.104.895-2 2-2h6.667c1.104 0 2 .896 2 2v10.667c0 1.104-.896 2-2 2H4.667c-1.104 0-2-.896-2-2V3.167z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.333 12.5c0-.368.298-.667.667-.667h.007c.369 0 .667.299.667.667 0 .369-.298.667-.667.667h-.007c-.369 0-.667-.298-.667-.667z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clippath id="clip0">
+                    <rect width="16" height="16" fill="currentColor" transform="translate(0 .5)" />
+                  </clippath>
+                </defs>
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="w-inline-block">
+            <div class="spark-icon spark-20px-icon w-embed">
+              <!-- SVG icon for email -->
+              <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.667 3.833a.667.667 0 00-.667.667v8a.667.667 0 00.667.667h10.667a.667.667 0 00.667-.667v-8a.667.667 0 00-.667-.667H2.667zM.667 4.5C.667 3.398 1.566 2.5 2.667 2.5h10.667c1.102 0 2 .898 2 2v8c0 1.102-.898 2-2 2H2.667c-1.101 0-2-.898-2-2v-8z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M.788 4.118a.667.667 0 01.928-.164L8 8.353l6.284-4.399a.667.667 0 11.768 1.113L8.383 9.713a.667.667 0 01-.765 0L.952 5.046a.667.667 0 01-.164-.928z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clippath id="clip0">
+                    <rect width="16" height="16" fill="currentColor" transform="translate(0 .5)" />
+                  </clippath>
+                </defs>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+  </div>
 </div>
-</body>
+<app-footer></app-footer>

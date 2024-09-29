@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ContactService } from 'src/app/Service/Contact/contact.service';
 
 @Component({
@@ -16,19 +17,21 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private router: Router
   ) {
     this.contactForm = this.formBuilder.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       company: ['', Validators.required],
       message: ['', Validators.required],
-      date: [{value: '', disabled: true}]
+      date: [{value: '', disabled: true}] 
     });
+    
   }
 
   ngOnInit() {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split('T')[0]; 
     this.contactForm.get('date')?.setValue(today);
 
     const script = document.createElement('script');
@@ -53,9 +56,11 @@ export class ContactComponent implements OnInit {
       response => {
         this.success = true;
         this.contactForm.reset();
-        this.contactForm.get('date')?.setValue(new Date().toISOString().split('T')[0]);
+        this.contactForm.get('date')?.setValue(new Date().toISOString().split('T')[0]); 
         this.submitted = false;
         this.loading = false;
+        this.router.navigate(['/contact-success']);
+
       },
       error => {
         console.error('Error submitting form:', error);
