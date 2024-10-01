@@ -6,6 +6,6 @@ export interface ListingsModel {
     bathrooms: number;
     address: string;
     amenities: string;
-    photos: URL;
+    photos: string;
     available: boolean;
 }
