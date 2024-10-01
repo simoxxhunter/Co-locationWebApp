@@ -112,11 +112,11 @@
 
 
     <div class="spark-four-column-team-grid">
-      <!-- Loop through each listing using *ngFor -->
       <div *ngFor="let listing of listings" class="spark-wrapped-team-card spark-stacked">
         <a href="#" class="w-inline-block">
-          <img src="{{listing.photos}}" loading="eager" width="80" alt="Listing Image" class="spark-square-image" />
+          <img [src]="listing.photos[0]" loading="eager" width="80" alt="Listing Image" class="spark-square-image" *ngIf="listing.photos && listing.photos.length > 0" />
         </a>
+        
         <div class="spark-team-member-details">
           <p class="spark-bold-heading">{{ listing.title }}</p>
           <p class="spark-small-sub-paragraph">
@@ -128,7 +128,6 @@
         <div class="spark-social-row">
           <a href="#" class="w-inline-block">
             <div class="spark-icon spark-20px-icon w-embed">
-              <!-- SVG icon for phone -->
               <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0)">
                   <path
@@ -154,7 +153,6 @@
           </a>
           <a href="#" class="w-inline-block">
             <div class="spark-icon spark-20px-icon w-embed">
-              <!-- SVG icon for email -->
               <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0)">
                   <path

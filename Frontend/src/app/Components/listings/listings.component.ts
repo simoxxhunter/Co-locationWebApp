@@ -22,6 +22,7 @@ export class ListingsComponent implements OnInit{
     script.src = 'assets/js/webflow.js';
     script.type = 'text/javascript';
     document.body.appendChild(script);
+    
     this.loadListings();
     
   }
